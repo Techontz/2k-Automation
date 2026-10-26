@@ -1,0 +1,36 @@
+import {
+  AtSign,
+  Bot,
+  CircleStop,
+  Clock,
+  FileText,
+  GitBranch,
+  Mail,
+  MessageSquareReply,
+  PenLine,
+  Send,
+  Split,
+  Tag,
+  Tags,
+  UserRound,
+  Zap,
+} from "lucide-react";
+import type { NodeType } from "@/lib/types";
+
+export const NODE_META: Record<NodeType, { label: string; icon: React.ComponentType<{ className?: string }> }> = {
+  trigger: { label: "Trigger", icon: Zap },
+  reply_comment: { label: "Public reply", icon: MessageSquareReply },
+  send_message: { label: "Send message", icon: Send },
+  send_template: { label: "WhatsApp template", icon: FileText },
+  condition: { label: "Condition", icon: GitBranch },
+  split: { label: "A/B split", icon: Split },
+  delay: { label: "Delay", icon: Clock },
+  ai_reply: { label: "AI reply", icon: Bot },
+  add_tag: { label: "Add tag", icon: Tag },
+  remove_tag: { label: "Remove tag", icon: Tags },
+  set_field: { label: "Set field", icon: PenLine },
+  collect_email: { label: "Collect email", icon: AtSign },
+  send_email: { label: "Send email", icon: Mail },
+  handover: { label: "Human handover", icon: UserRound },
+  end: { label: "End", icon: CircleStop },
+};
